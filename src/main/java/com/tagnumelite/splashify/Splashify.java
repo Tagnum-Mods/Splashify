@@ -46,5 +46,6 @@ public class Splashify {
 
     @SubscribeEvent
     public void onAddResourceListeners(AddReloadListenerEvent event) {
+        event.addListener(new SplashResourceListener());
     }
 }
