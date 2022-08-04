@@ -6,6 +6,8 @@
   "refmap": "splashify.refmap.json",
   "mixins": [],
   "client": [
+    "MixinSplashManager",
+    "MixinTitleScreen"
   ],
   "injectors": {
     "defaultRequire": 1
