@@ -35,11 +35,12 @@ public abstract class MixinSplashManager {
 
         SPLASHES.addAll(0.0, vanillaSplashes.stream().map(s -> new Splash(s, Collections.emptyList(), 0.0)).toList());
 
-        SPLASHES.add(999, new Splash(this.user.getName().toUpperCase(Locale.ROOT) + " IS YOU"));
+        SPLASHES.add(0, new Splash(this.user.getName().toUpperCase(Locale.ROOT) + " IS YOU"));
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
 
+        // TODO: Find good random weight for all dates
         if (calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DATE) == 24) {
             SPLASHES.add(Double.MAX_VALUE / 4, new Splash("Merry X-mas!"));
         } else if (calendar.get(Calendar.MONTH) == Calendar.JANUARY && calendar.get(Calendar.DATE) == 1) {
