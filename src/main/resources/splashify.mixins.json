@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tagnumelite.splashify.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "splashify.refmap.json",
+  "mixins": [],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
