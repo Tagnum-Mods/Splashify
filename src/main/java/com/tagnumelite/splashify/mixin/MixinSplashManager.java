@@ -62,14 +62,12 @@ public abstract class MixinSplashManager {
     @Inject(method = "getSplash", at = @At("RETURN"), cancellable = true)
     private void onGetSplash(CallbackInfoReturnable<String> cir) {
         String originalSplash = cir.getReturnValue();
-        String newSplash = SPLASHES.next().value().formatted(user.getName());
-
-        if (!FMLLoader.isProduction()) {
-            Splashify.LOGGER.debug("Changed original splash from {} to {}", originalSplash, newSplash);
-        }
+        //String newSplash = SPLASHES.next().value().formatted(user.getName());
+        String newSplash = SPLASHES.next().value();
+        Splashify.LOGGER.debug("Changed original splash from {} to {}", originalSplash, newSplash);
 
         if (originalSplash == null) {
-            cir.setReturnValue("Failed to get splash");
+            cir.setReturnValue("§cFailed to get splash");
             return;
         }
         cir.setReturnValue(newSplash);
