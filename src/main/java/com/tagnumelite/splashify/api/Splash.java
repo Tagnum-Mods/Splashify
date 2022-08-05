@@ -14,15 +14,15 @@ public record Splash(String value, List<Pair<String, Dynamic<?>>> requirements, 
             instance -> instance.group(
                     Codec.STRING.fieldOf("value").forGetter(Splash::value),
                     Codec.compoundList(Codec.STRING, Codec.PASSTHROUGH).optionalFieldOf("requirements", new ArrayList<>()).forGetter(Splash::requirements),
-                    Codec.DOUBLE.optionalFieldOf("weight", 0.0).forGetter(Splash::weight)
+                    Codec.DOUBLE.optionalFieldOf("weight", 1.0).forGetter(Splash::weight)
             ).apply(instance, Splash::new));
 
     public Splash(String value) {
-        this(value, 0.0);
+        this(value, 1.0);
     }
 
     public Splash(String value, List<Pair<String, Dynamic<?>>> requirements) {
-        this(value, requirements, 0.0);
+        this(value, requirements, 1.0);
     }
 
     public Splash(String value, Double weight) {

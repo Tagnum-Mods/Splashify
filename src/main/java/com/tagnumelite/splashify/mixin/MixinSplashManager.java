@@ -33,9 +33,8 @@ public abstract class MixinSplashManager {
     private void onApply(List<String> vanillaSplashes, ResourceManager manager, ProfilerFiller profiler, CallbackInfo ci) {
         SPLASHES.clear();
 
-        SPLASHES.addAll(0.0, vanillaSplashes.stream().map(s -> new Splash(s, Collections.emptyList(), 0.0)).toList());
-
-        SPLASHES.add(0, new Splash(this.user.getName().toUpperCase(Locale.ROOT) + " IS YOU"));
+        SPLASHES.addAll(1, vanillaSplashes.stream().map(Splash::new).toList());
+        SPLASHES.add(1, new Splash(this.user.getName().toUpperCase(Locale.ROOT) + " IS YOU"));
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());

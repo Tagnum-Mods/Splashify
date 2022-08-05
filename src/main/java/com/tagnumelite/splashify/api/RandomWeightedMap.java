@@ -20,7 +20,7 @@ public class RandomWeightedMap<O> {
     }
 
     public void add(double weight, O result) {
-        if (weight <= 0) return;
+        if (weight <= 0) weight = 1.0;
         total += weight;
         map.put(total, result);
     }
